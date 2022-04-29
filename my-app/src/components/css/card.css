@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", sans-serif;
+    box-sizing: border-box
+}
+.card{
+  border-radius: 0%;
+  width: 18rem;
+}
+.card .card{
+    border-style: none;
+}
+
+.card .card-name{
+  font-weight: bolder;
+}
+.card .card-img-overlay, .card .card-img-overlay .upper, .card .card-img-overlay .lower{
+    display: flex;
+    width: 100%;
+}
+.card .card-img-overlay{
+    align-content: space-between;
+    flex-wrap: wrap;
+}
+.card .card-img-overlay .upper, .card .card-img-overlay .lower{
+    justify-content: space-between;
+}
+.card .card-img-overlay .upper a .fas.fa-heart{
+    color: red;
+}
+.card .card-img-overlay .upper a .far.fa-heart{
+    color: black;
+}
+.card .card-img-overlay .upper a .fa-heart {
+    text-shadow: 0 0 3px #000;
+    font-size: 1.4rem;
+}
+.card .card-img-overlay .upper p{
+    background-color: #000;
+    border-radius: 8px;
+    color: #fff;
+    font-size:0.7rem;
+    padding: 2px 5px;
+}
+.card .card-img-overlay .upper p i{
+    color: #FDD14B;
+}
+.card .card-img-overlay .lower .card-title{
+    padding: 10px 22px;
+}
+.card .card-img-overlay .card-title{
+    color: #fff;
+    background-color: #000;
+    padding: 5px;
+    display: inline-block;
+    margin-bottom: 0px;
+}
+.card .inner-off{
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: #000;
+    color: #fff;
+    font-weight: bold;
+}
+.card .card-price.row{
+    align-items: center;
+    justify-content: space-between;
+}
+.card .card-original-price, .card-discount-price{
+    padding: 5px 0px;
+    font-size: 14px;
+    font-weight: bolder;
+}
+.card .card-original-price{
+    color: #6A707E;
+    text-decoration: line-through;
+    font-size: 13px;
+
+}
+.card .card-off{
+    padding: 0px;
+    font-size: 12px;
+}
+.card .card-price{
+    margin-right:0px;
+    margin-left: 0px;
+}
