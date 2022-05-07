@@ -10,35 +10,54 @@ import CardA from '../components/CardA';
 const ComponentsView = () => {
     const [items, setItems] = useState([])
     const [loading,setLoading] = useState(false)
-    let data ;
-    useEffect(() => {
-        const getItems = async() =>{
-            setLoading(true)
-            const response = await fetch ('http://127.0.0.1:8000/Product_list/')
-            const fetchedItems = await response.json()
-            setItems(fetchedItems)
-            //console.log(response);
 
+/*
+    useEffect(() => {
+        const url = "https://fakerapi.it/api/v1/products?_quantity=5";
+        //const url = "http://127.0.0.1:8000/Product_list";
+    
+        const fetchData = async () => {
+          try {
+            const response = await fetch(url);
+            const json = await response.json();
+            console.log(json);
+          } catch (error) {
+            console.log("error", error);
+          }
+        };
+    
+        fetchData();
+    }, []);
+    */
+    useEffect(() => {
+        const getItems = () =>{
+            setLoading(true)
               
   
         axios.get('http://127.0.0.1:8000/Product_list/')
         .then(res => {
-            data = res.data;
-            console.log(data);
-            //this.setState({
-             //   details : data    
-            //});
+            const fetchedItems = res.data
+            console.log(res.data);
+            setItems(fetchedItems)
         })
         .catch(err => {})
+   
 
         }
-        console.log(data);
-        
         getItems();
     }, []);
+    
     return (
         <div>
-            <CardA/>
+            {items.map((item)=>{
+                return(
+                    <CardA
+                        key={item.id}
+                    />
+                )
+            })
+
+            }
         </div>
     );
 }

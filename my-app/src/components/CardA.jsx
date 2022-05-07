@@ -1,9 +1,33 @@
 import React from 'react';
+
+import axios from "axios";
+import { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import './css/card.css'
-const CardA = () => {
+
+const CardA = (props) => {
+    const [brands, setBrand] = useState('ss')
+    
+  useEffect(() => {
+    const getBrand = () => {
+      axios
+      .get("http://127.0.0.1:8000/brand_list/")
+        .then((res) => {
+          const fetchedItems = res.data;
+          setBrand(fetchedItems);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
+    getBrand();
+  }, []);
     return (
         <>
-         
+          <NavLink
+            to={`/product/${props.id}`}
+          >
+              
         <div className="card h-100">
             <div className="card">
                 <img src="assets/cute-baby-cat-cartoon-hand-drawn-style-vector-illustration.jpg" className="card-img-top" alt="..."/>
@@ -19,16 +43,16 @@ const CardA = () => {
                 </div>
             </div>
             <div className="card-body">
-                <h5 className="card-category">Jackets & Coats</h5>
-                <h5 className="card-name">Open-front coat</h5>
+                <h5 className="card-category">{props.name}</h5>
+                <h5 className="card-name"> { brands[props.brand - 1].Brand_name}</h5>
                 <h6 className="card-price row">
-                    <span className="col-3 card-original-price">250.00$</span>
-                    <span className="col-3 card-discount-price">120.00$</span>
-                    <span className="col-6 card-off text-end "> <span className="inner-off">SALE -50%</span> </span>
+                    <span className="col-3 card-original-price">{props.price}</span>
+                    <span className="col-3 card-discount-price">{props.price - (props.price * ((props.discount)/100) )} </span>
+                    <span className="col-6 card-off text-end "> <span className="inner-off">SALE -{props.discount}%</span> </span>
                 </h6>
             </div>
         </div>
-       
+        </NavLink>
         </>
     );
 }

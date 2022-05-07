@@ -1,12 +1,18 @@
 //libs
 import React from 'react';
 //components
-import CardA from '../components/CardA'
-import ComponentsView from '../Views/ComponentsView'
+import IntroHome from '../Views/IntroHome';
+//import ComponentsView from '../Views/ComponentsView'
+import Features from '../Views/Features';
+import ViewA1 from '../Views/ViewA1';
+import SliderAndMore from '../Views/SliderAndMore';
 const Home = () => {
     return (
         <div>
-            <ComponentsView/>
+            <IntroHome/>
+            <Features/>
+            <ViewA1/>
+            <SliderAndMore/>
         </div>
     );
 }
