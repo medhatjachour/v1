@@ -13,6 +13,8 @@ code {
 }
 a{
   text-decoration: none;
-  
   color: inherit;
+}
+iframe{
+  border: 0px;
 }

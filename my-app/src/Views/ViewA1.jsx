@@ -10,7 +10,7 @@ const ViewA1 = () => {
                 <div className="configA">
                     <h2>Trusted by Leading Brands</h2>
                     <Home2rows/>
-                    <Button href="/" variant="contained" className="ButtonsA"> Discover our business solutions</Button>
+                    <Button href="/" variant="contained" className="ButtonsA"> Discover our Leading Brands</Button>
                 </div>
             </div>
         </>

@@ -8,43 +8,42 @@ import Button from "@mui/material/Button";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import Stack from "@mui/material/Stack";
+import Grid from "@mui/material/Grid";
 //components
 import CardA from "../components/CardA";
 import CardSkelton from "../components/CardSkelton.tsx";
 
-const SliderAndMore = () => {
+const SliderAndMore = (props) => {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const  nextFunctionForS = () =>{
-    console.log("sssssss");
-    const item = document.getElementById("theViewIWantCarousel")
-    console.log(item.getBoundingClientRect());
-    console.log(item.scrollLeft);
+    const item = document.getElementById("theViewIWantCarousel" + props.id)
     item.scrollLeft +=  400
 
   }
   const perviousFunctionForS = ()=>{
-    console.log("perv");
-    const item = document.getElementById("theViewIWantCarousel")
-    console.log(item.getBoundingClientRect());
-    console.log(item.scrollLeft);
+    const item = document.getElementById("theViewIWantCarousel" + props.id)
     item.scrollLeft -= 400
     }
+
 
   useEffect(() => {
     const getItems = () => {
       setLoading(true);
+        //.get(`http://127.0.0.1:8000/product_pk/<int:${props.id}>`)
+      
       axios
         .get("http://127.0.0.1:8000/Product_list/")
         .then((res) => {
           const fetchedItems = res.data;
-          console.log(res.data);
+          //console.log(res.data);
           setItems(fetchedItems);
         })
         .catch((err) => {
           console.log(err);
         });
+        
     };
     getItems();
   }, []);
@@ -55,36 +54,41 @@ const SliderAndMore = () => {
         <div className="sliderAndMore">
           <div className="sliderAndMoreContainer">
             <div className="headerSM">
-              <Stack direction="row" spacing={2}>
+              <Grid container spacing={2}>
+              <Grid  item xs={10} md={10}>
                 <header>
                   <h3>
-                    The Header <span>some more info</span>
+                    {props.name} <span>{props.meta}</span>
                   </h3>
                 </header>
-
+                </Grid>
+              <Grid  item xs={2} md={2}>
                 <Button variant="text" endIcon={<ChevronRightIcon />}>
                   See All
                 </Button>
-              </Stack>
+                
+                </Grid>
+              </Grid>
             </div>
             <div className="sliderM">
               
-            <span id="previous" className="previous"  onClick={perviousFunctionForS}> <KeyboardArrowLeftIcon/> </span>
+            <div id={"previous" +props.id} className="previous"  onClick={perviousFunctionForS}> <KeyboardArrowLeftIcon/> </div>
                    
-              <Stack direction="row" spacing={2} id='theViewIWantCarousel'>
+              <Stack direction="row" spacing={2} id={"theViewIWantCarousel" + props.id} className="theViewIWantCarousel">
                 {!loading ? (
                   <CardSkelton />
                 ) : (
                   items.map((item) => {
+                    
                     return (
                       <>
                         <CardA 
-                               key={item.id}  
-                               id = {item.id}
-                               name = {item.Product_name}
-                               brand = {item.Product_brand}
-                               discount  = {item.Product_discount}
-                               price = {item.Product_sale_price}
+                          key={item.id}  
+                          id = {item.id}
+                          name = {item.Product_name}
+                          brand = {item.Product_brand}
+                          discount  = {item.Product_discount}
+                          price = {item.Product_sale_price}
                         />
 
                       </>
@@ -93,7 +97,7 @@ const SliderAndMore = () => {
                 )}
               </Stack>
               
-              <span id="next" className="next" onClick={nextFunctionForS}> <ChevronRightIcon/> </span>
+                <div id={"next" + props.id} className="next" onClick={nextFunctionForS}> <ChevronRightIcon/> </div>
                     
             </div>
           </div>

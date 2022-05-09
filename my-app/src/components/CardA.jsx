@@ -4,6 +4,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import './css/card.css'
+import Skeleton from '@mui/material/Skeleton';
 
 const CardA = (props) => {
     const [brands, setBrand] = useState('ss')
@@ -27,10 +28,12 @@ const CardA = (props) => {
           <NavLink
             to={`/product/${props.id}`}
           >
-              
+              <p></p>
         <div className="card h-100">
             <div className="card">
-                <img src="assets/cute-baby-cat-cartoon-hand-drawn-style-vector-illustration.jpg" className="card-img-top" alt="..."/>
+                {/* <img src="/" className="card-img-top" alt="..."/>*/}
+                <Skeleton variant="rectangular" width={220} height={120} />
+   
                 <div className="card-img-overlay">
                     <div className="upper">
                         <p className="rating-star">4.6 <i className="fa-solid fa-star"></i></p>

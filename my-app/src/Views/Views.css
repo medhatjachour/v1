@@ -64,7 +64,57 @@
 .sectionA .sectionA .ButtonsA{
     background-color: rgb(57, 4, 4)!important;
 }
+
+.brands-trusted-holder{
+    padding: 20px;
+    overflow: hidden;
+  }
+/*/////////////////////////Cats View////////////////////////*/
+.cats-view-home{
+    margin-bottom: 20px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
 /*/////////////////////////SliderAndMore////////////////////////*/
 .sliderM{
-    overflow: hidden;
+    position: relative;
+}
+
+
+
+.theViewIWantCarousel{
+    overflow: hidden;   
+    scroll-behavior: smooth;
+    overflow-x:auto;
+    scroll-snap-type: x mandatory;
+    flex-wrap: nowrap;
+    text-align: center;
+    align-items: center;
+}
+
+.theViewIWantCarousel::-webkit-scrollbar{
+    display: none;
+}
+ .next,
+ .previous
+{
+    border: none;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 8;
+    top: 30%;
+    bottom: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: radial-gradient(#8a8181, transparent);
+}
+ .previous {
+    left: -25px;
+}
+ .next {
+    right: -25px;
 }

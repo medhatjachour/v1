@@ -7,9 +7,9 @@ import {
   OrbitControls,
 } from "@react-three/drei";
 import { HexColorPicker } from "react-colorful";
-import { proxy, useProxy  } from "valtio";
+import { proxy, useProxy } from "valtio";
 
-//import "./demo.css";
+import "./demo.css";
 
 // Using a Valtio state model to bridge reactivity between
 // the canvas and the dom, both can write to it and/or react to it.
@@ -30,7 +30,7 @@ const state = proxy({
 
 function Shoe() {
   const ref = useRef();
-  const snap = useProxy (state);
+  const snap = useProxy(state);
   // Drei's useGLTF hook sets up draco automatically, that's how it differs from useLoader(GLTFLoader, url)
   // { nodes, materials } are extras that come from useLoader, these do not exist in threejs/GLTFLoader
   // nodes is a named collection of meshes, materials a named collection of materials
@@ -114,7 +114,7 @@ function Shoe() {
 }
 
 function Picker() {
-  const snap = useProxy (state);
+  const snap = useProxy(state);
   return (
     <div style={{ display: snap.current ? "block" : "none", marginLeft: 150 }}>
       <HexColorPicker
@@ -168,95 +168,3 @@ export default function Demo() {
     </>
   );
 }
-
-/*
-import * as THREE from "three";
-import { PLYLoader } from "three/examples/jsm/loaders/PLYLoader";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import { Float32BufferAttribute } from "three";
-
-const plycont = document.getElementById("plyCont")
-const containerPLY = document.createElement("div");
-document.body.appendChild(containerPLY);
-
-const renderer = new THREE.WebGLRenderer({ antialias: true });
-containerPLY.appendChild(renderer.domElement);
-
-renderer.setPixelRatio(window.devicePixelRatio);
-renderer.setSize(window.innerWidth, window.innerHeight);
-
-const scene = new THREE.Scene();
-scene.background = new THREE.Color("#dedef0");
-
-const loader = new PLYLoader();
-
-loader.load("./assets/BJ721E05W-J11@9=person(2).ply", function(geometry) {
-    console.log(geometry);
-
-    geometry.computeFaceNormals();
-    geometry.computeVertexNormals();
-
-    geometry.center();
-
-    geometry.computeBoundingBox();
-
-    const x = geometry.boundingBox.max.x - geometry.boundingBox.min.x;
-    const y = geometry.boundingBox.max.y - geometry.boundingBox.min.y;
-    const z = geometry.boundingBox.max.z - geometry.boundingBox.min.z;
-
-    const cameraZ = Math.max(x * 2.5, y * 2.5, z * 2.5);
-
-    const material = new THREE.MeshLambertMaterial({
-        color: "#b0b0b0"
-    });
-
-    const mesh = new THREE.Mesh(geometry, material);
-
-    mesh.castShadow = true;
-    mesh.receiveShadow = true;
-
-    const camera = new THREE.PerspectiveCamera(
-        30,
-        window.innerWidth / window.innerHeight,
-        1,
-        1000
-    );
-
-    camera.position.set(0, 0, cameraZ);
-    camera.lookAt(mesh);
-
-    const controls = new OrbitControls(camera);
-    controls.enableZoom = true;
-    controls.autoRotate = true;
-
-    var lightHolder = new THREE.Group();
-
-    var directionalLight = new THREE.DirectionalLight(0xffffff, 0.3);
-    directionalLight.position.set(1, 1, 0).normalize();
-    lightHolder.add(directionalLight);
-
-    var directionalLight = new THREE.DirectionalLight(0xffffff, 0.3);
-    directionalLight.position.set(-1, -1, 0).normalize();
-    lightHolder.add(directionalLight);
-    // var directionalLight = new THREE.DirectionalLight(0xffffff, 0.3);
-    // directionalLight.position.set(0, 0, 0).normalize();
-    // lightHolder.add(directionalLight);
-    scene.add(lightHolder);
-
-    const light = new THREE.AmbientLight("#FFF");
-    scene.add(light);
-
-    scene.add(mesh);
-
-    function animate() {
-        requestAnimationFrame(animate);
-        lightHolder.quaternion.copy(camera.quaternion);
-        // required if controls.enableDamping or controls.autoRotate are set to true
-        controls.update();
-
-        renderer.render(scene, camera);
-    }
-    animate();
-});
-export default loader
-*/
