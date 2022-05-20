@@ -5,10 +5,12 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import ProductPage from "./pages/ProductPage";
 import Type from "./pages/Type";
+import Signup from './pages/Signup'
+import Login from './pages/Login'
 //components
 //import { Counter } from "./features/counter/Counter";
-import MainNavbar from './components/MainNavBar.tsx'
-//import RouterBreadcrumbs from './Views/BreadMap.tsx'
+import MainNavbar from './components/MainNavBar'
+//import RouterBreadcrumbs from './Views/BreadMap'
 function App() {
   return (
     <>
@@ -21,6 +23,8 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/Product/:id" element={<ProductPage />} />
           <Route path="/Type/:id" element={<Type />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
         </Routes>
     </>
   );

@@ -17,7 +17,7 @@ const Home = () => {
     
     const [cats, setCats] = useState([]);
     const [types, setTypes] = useState([]);
-    
+   
   useEffect(() => {
     const getCats = () => {
       setLoading(false);

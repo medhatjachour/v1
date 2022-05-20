@@ -1,5 +1,5 @@
 //libs
-import React from 'react';
+import React ,{useEffect}from 'react';
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -22,6 +22,16 @@ import './css/navbar.css'
 //components
 import AccountMenu from './AccountMenu.tsx';
 
+/*
+const theNav = document.getElementsByClassName('MuiToolbar-root')
+
+  const handleScroll = () =>{
+    theNav.classList.add("ToggleScroll");
+    console.log(theNav)
+   };
+   window.addEventListener('scroll', handleScroll);
+
+  */
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
