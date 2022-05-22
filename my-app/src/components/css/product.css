@@ -1,0 +1,192 @@
+:root {
+    --main-bg-color: #07b0b0;
+    --main-lt-color: #79c6c6;
+  }
+  
+.productViewSection{
+    padding-top: 60px;
+    margin: 10px;
+}
+.productViewSection button span{
+    margin: 0px; 
+}
+.productViewSection button .pi-face-item{
+    color: #1877f2;
+    
+}
+.productViewSection button .pi-insta-item{
+    color: #c32aa3;
+}
+.productViewSection button .pi-twtr-item{
+    color: #1da1f2;
+}
+.productViewSection button .pi-whats-item{
+    color: #25d366;
+}
+.productViewSection .pb-face-item{
+    border-radius: 50%!important;
+    border-color: #1877f2!important;
+    height: 50px;
+    width: 50px;
+    min-width: 0px!important;
+    
+}
+.productViewSection .pb-insta-item{
+    border-radius: 50%!important;
+    border-color: #c32aa3!important;
+    height: 50px;
+    width: 50px;
+    min-width: 0px!important;
+}
+.productViewSection .pb-twtr-item{
+    border-radius: 50%!important;
+    border-color: #1da1f2 !important;
+    height: 50px;
+    width: 50px;
+    min-width: 0px!important;
+}
+.productViewSection .pb-whats-item{
+    border-radius: 50%!important;
+    border-color: #25d366!important;
+    height: 50px;
+    width: 50px;
+    min-width: 0px!important;
+}
+.productViewSection h2{
+    font-size: 110px;
+    margin-left: 25px;
+}
+.productViewSection .btnlnk-product{
+    color: inherit;
+    text-decoration: underline;
+}
+/*
+.productViewSection .main-product-view{
+   text-align: center;
+   align-items: center;
+   margin: auto;
+    width: 600px;
+    height: 600px;
+}
+.productViewSection .outer-mnp{
+    width: 100%;
+    height: 100%;
+    border: 1px solid;
+    border-top-color: transparent;
+    border-radius: 50%;
+    border-right-color: var(--main-bg-color);
+    border-left-color: var(--main-bg-color);
+    border-bottom-color:var(--main-bg-color);
+}
+*/
+/*/////////////////////////////////////*/
+.product-dsh .header-products{
+    margin-bottom: 25px;
+}
+.product-dsh h3{
+    text-transform: capitalize;
+    font-size: 33px;
+    margin-bottom: 5px;
+}
+.product-dsh h4{
+    font-size:20px;
+    opacity: .8;
+    text-transform: capitalize;
+
+}
+.product-dsh .sale-price{
+    font-size: 21px;
+    margin-right: 20px;
+}
+
+.product-dsh .real-price{
+    font-size: 16px;
+    margin-right: 20px;
+    text-decoration: line-through;
+    opacity: .69;
+
+}
+.productViewSection .prices-holder{
+    margin: 8px 0px;
+}
+
+.product-dsh .discount{
+    padding: 8px;
+    font-size: 14px;
+    border: 2px solid;
+    border-color: var(--main-bg-color);
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+   /* margin-left: 10px;*/
+    float: right;
+}
+.productViewSection .colors-product{
+    margin: 8px 0px
+}
+.productViewSection .colors-product .color-bg-holder{
+    width: 35px;
+    height: 35px;
+    padding: 2px;
+    border-radius: 50%;
+    border: 1.5px solid var(--main-bg-color);
+    cursor: pointer;
+}
+.productViewSection .colors-product .color-sm{
+    width: 100%;
+    border-radius: 50%;
+    height: 100%;
+    background-color: #07b0b0;
+}
+.productViewSection .sizes-product .size-bg-holder{
+    border: 1px solid;
+    border-color: var(--main-bg-color);
+    padding: 3px;
+    width: 3rem;
+    height: 3rem;
+    margin: 0 1rem 0 0;
+    border-radius: 60% 40% 30% 70% / 30% 40% 60% 70%   ;
+    transform: rotate(-45deg);
+    cursor: pointer;
+}
+.productViewSection .sizes-product .size-sm{
+    width: 100%;
+    height: 100%;
+    margin: 0 1rem 0 0;
+    border-radius: 60% 40% 30% 70% / 30% 40% 60% 70%   ;
+    cursor: pointer;
+    position: relative;
+    background-color: var(--main-lt-color);
+}
+.product-btns{
+    margin: 8px 0px;
+}
+.product-btns .product-dsh-ptn{
+    width: 47%;
+    border: 1px solid var(--main-bg-color);
+    background-color: transparent;
+    padding: 10px 8px;
+    font-size: 1.3rem;
+    border-bottom-left-radius: 32px;
+    border-top-right-radius: 32px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.product-btns .fitIt{
+    color: #fff;
+    background-color: var(--main-bg-color);
+} 
+.product-btns .fitIt:hover{
+    background-color: #fff;
+    color: var(--main-bg-color);
+} 
+
+.product-btns .addToCart{
+    color: var(--main-bg-color);
+} 
+.product-btns .addToCart:hover{
+    background-color: var(--main-bg-color);
+    color: #fff;
+} 
+/*end-slide-card*/
+

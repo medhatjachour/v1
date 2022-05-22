@@ -1,51 +1,29 @@
-import React from "react";
-import * as THREE from "three";
+//https://codesandbox.io/s/7kohn?file=/src/App.js:1154-5158
 import { Canvas } from "@react-three/fiber";
 import { useLoader } from "@react-three/fiber";
 import { Environment, OrbitControls } from "@react-three/drei";
-import { PLYLoader } from "three/examples/jsm/loaders/PLYLoader";
-import { MTLLoader } from "three/examples/jsm/loaders/MTLLoader";
-import { DDSLoader } from "three-stdlib";
-import { Suspense } from "react";
-THREE.DefaultLoadingManager.addHandler(/\.dds$/i, new DDSLoader());
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import React,{ Suspense } from "react";
 
-const Scene = () => {
-  const materials = useLoader(MTLLoader, "1.mtl");
-  const obj = useLoader(PLYLoader, "1.ply", (loader) => {
-    //materials.preload();
-    //loader.setMaterials(materials);
-  });
-
-  console.log(obj);
-  return <primitive object={obj} scale={1.4} />;
+const Model = () => {
+  const gltf = useLoader(GLTFLoader, "mm_project.glb");
+  return (
+    <>
+      <primitive object={gltf.scene} scale={0.4} />
+    </>
+  );
 };
 
 export default function HomeModel() {
   return (
-    <div className="Thefknai">
+    <div className="HomeModel">
       <Canvas>
         <Suspense fallback={null}>
-          <Scene />
+          <Model />
           <OrbitControls />
-          <Environment preset="sunset"  />
+          <Environment preset="sunset" background />
         </Suspense>
       </Canvas>
     </div>
   );
 }
-/*import React from 'react'; 
-import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
-import { useLoader } from '@react-three/fiber'
-
-const Thefknai = () => {
-  return (
-    <div>
-      sadadf
-    </div>
-  );
-}
-
-export default Thefknai;
-
-export default HomeModel;
-*/

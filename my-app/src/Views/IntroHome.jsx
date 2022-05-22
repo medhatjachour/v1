@@ -6,7 +6,7 @@ import Grid from '@mui/material/Grid';
 import './Views.css'
 //components
 import '../components/PlyHome'
-import HomeModel from '../components/Ai/HomeModel';
+//import HomeModel from '../components/Ai/HomeModel';
 //import Demo from '../components/PlyHome';
 const IntroHome = () => {
     useEffect(() => {
@@ -35,7 +35,7 @@ const IntroHome = () => {
                     <Grid item xs={12} md={6}>
                     <div className="hero_model col-md-6" id="plyCont">
                    <iframe>ss</iframe>
-                   <HomeModel/>
+                   {/* <HomeModel/>*/}
                     </div>
                     </Grid>
                 </Grid>

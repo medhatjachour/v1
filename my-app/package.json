@@ -23,6 +23,7 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "^5.0.1",
     "redux-thunk": "^2.4.1",
+    "sass": "^1.52.1",
     "three": "^0.140.0",
     "url": "^0.11.0",
     "valtio": "^0.4.8",
