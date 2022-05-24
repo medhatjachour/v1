@@ -7,6 +7,7 @@ import ProductPage from "./pages/ProductPage";
 import Type from "./pages/Type";
 import Signup from './pages/Signup'
 import Login from './pages/Login'
+import BuyerAccount from "./pages/BuyerAccount";
 //components
 //import { Counter } from "./features/counter/Counter";
 import MainNavbar from './components/MainNavBar'
@@ -25,6 +26,7 @@ function App() {
           <Route path="/Type/:id" element={<Type />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/BuyerAccount/*" element={<BuyerAccount />} />
         </Routes>
     </>
   );

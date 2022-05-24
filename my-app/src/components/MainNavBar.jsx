@@ -10,6 +10,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import { NavLink } from "react-router-dom";
+import Avatar from '@mui/material/Avatar';
 //assets
 import "./css/navbar.css";
 
@@ -114,6 +115,12 @@ const MainNavBar = () => {
               </NavLink>
               <NavLink to="/Signup" className="logIn-nv nav-btn-ls ">
               Signup
+              </NavLink>
+              
+              <NavLink to="/BuyerAccount" className="logIn-nv nav-btn-ls ">
+             
+                  <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+              
               </NavLink>
             </Toolbar>
           </AppBar>

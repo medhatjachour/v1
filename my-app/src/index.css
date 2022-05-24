@@ -29,3 +29,6 @@ width: 500px;
   height: 100vh;
   width: 100vw;
 }
+.none{
+  display: none!important;
+}

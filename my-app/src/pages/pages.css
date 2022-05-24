@@ -1,0 +1,22 @@
+.account-container{
+    margin-top: 60px;
+    background-color: #F8F8F8;
+    /*background-color: rgb(244, 244, 244);*/
+}
+.account-container .account-list{
+    margin: 10px 0px;
+    position: sticky;
+    top: 60px;
+    background-color: white;
+    padding: 10px 0px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+.account-container .accountComponents{
+
+    margin: 10px 0px;
+    margin-left: 20px;
+    padding: 20px!important;
+    background-color: white;
+    padding: 10px 0px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
