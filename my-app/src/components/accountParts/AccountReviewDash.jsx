@@ -4,7 +4,6 @@ import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 
 import Textfield from '../FormsUI/Textfield';
-import Select from '../FormsUI/Select';
 
 import Button from '../FormsUI/Button';
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
@@ -15,35 +14,23 @@ import StarIcon from '@mui/icons-material/Star';
 
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import Snackbar from '@mui/material/Snackbar';
 import IconButton from "@mui/material/IconButton";
 import Stack from "@mui/material/Stack";
-import SettingsIcon from "@mui/icons-material/Settings";
-import Alert from '@mui/material/Alert';
 import { Skeleton, Typography } from "@mui/material";
 const INITIAL_FORM_STATE_REVIEW = {
-    additionalAddressInfo: '',
-    city: '',
-    region: '',
+    ratingUser: 0,
+    ReviewTitle: '',
+    MoreInformation: '',
   };
   
   
   const FORM_VALIDATION_REVIEW = Yup.object().shape({
-    firstName: Yup.string()
+    ratingUser: Yup.string()
       .required('Required'),
-    lastName: Yup.string()
+    ReviewTitle: Yup.string()
       .required('Required'),
-    email: Yup.string()
-      .email('Invalid email.')
+    MoreInformation: Yup.string()
       .required('Required'),
-    phone: Yup.number()
-      .integer()
-      .typeError('Please enter a valid phone number')
-      .required('Required'),
-    gender:Yup.string()
-    .required('Required'),
-    arrivealDate:Yup.string()
-    .required("DOB is Required")
     
   });
   
@@ -115,7 +102,7 @@ const AccountReviewDash = () => {
                   </Typography>
                   <Stack direction="row" spacing={2}>
                     <Rating
-                    name="hover-feedback"
+                    name="ratingUser"
                     value={value}
                     precision={0.5}
                     getLabelText={getLabelText}

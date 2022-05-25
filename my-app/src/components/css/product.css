@@ -1,6 +1,6 @@
 :root {
     --main-bg-color: #07b0b0;
-    --main-lt-color: #79c6c6;
+    --main-lt-color: #92d5d5;
   }
   
 .productViewSection{
@@ -60,26 +60,176 @@
     color: inherit;
     text-decoration: underline;
 }
-/*
+
 .productViewSection .main-product-view{
    text-align: center;
    align-items: center;
    margin: auto;
-    width: 600px;
-    height: 600px;
+    width: 700px;
+    height: 700px;
 }
+
 .productViewSection .outer-mnp{
-    width: 100%;
-    height: 100%;
-    border: 1px solid;
-    border-top-color: transparent;
-    border-radius: 50%;
-    border-right-color: var(--main-bg-color);
+    
+    position: relative;
+    padding: 1px;
+    top: 250px;
+    width: 700px;
+    height: 350px; /* as the half of the width */
+    border-bottom-left-radius: 352px;  /* 100px of height + 10px of border */
+    border-bottom-right-radius: 352px; /* 100px of height + 10px of border */
+    border: 3px solid var(--main-lt-color);
+    border-top: 0;
+    /* border-right-color: var(--main-bg-color);
     border-left-color: var(--main-bg-color);
-    border-bottom-color:var(--main-bg-color);
+    border-bottom-color:var(--main-bg-color); */
 }
-*/
-/*/////////////////////////////////////*/
+
+.main-product-view .inner-mnp{
+    position: absolute;
+    left: 90px;
+    top: -270px;
+    width: 520px;
+    height: 520px;
+    border-radius: 50%;
+    border: 3px solid var(--main-lt-color);
+  
+}
+div.circle {
+    cursor: pointer;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border: 2px solid black;
+    border-radius: 50%;
+  }
+  .productViewSection .product-mn-img{
+      position: relative;
+      top: 15px;
+      border-radius: 50%;
+  }
+  .cnt{
+      padding: 10px;
+  }
+  .inner-mnp .main-product-view-cont svg{
+      color: #fff;
+      position: relative;
+      top: 5px;
+      
+  }
+  .inner-mnp .main-product-view-cont{
+      width: 33px;
+      height: 33px;
+      cursor: pointer;
+      position: absolute;
+      top: 0px;
+      left: 250px;
+      background-color: var(--main-bg-color);
+      border-radius: 25px;
+  }
+  .inner-mnp .main-product-view-fav{
+      left: 70px;
+      top:45px;
+  }
+  .inner-mnp .main-product-view-cat{
+    left: 410px;
+    top:45px;
+}
+
+.inner-mnp .image-carousel-left{
+    position:absolute;
+    top: 280px;
+    left: -60px;
+    color: var(--main-bg-color);
+    font-size: 26px;
+    transform: rotate(76deg);
+}
+
+.inner-mnp .image-carousel-right{
+    position:absolute;
+    top: 280px;
+    left: 542px;
+    color: var(--main-bg-color);
+    font-size: 26px;
+    transform: rotate(280deg);
+}
+/*////////////////////product details /////////////////////////*/
+.specific-product{
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    /* border: 1px solid lightgray; */
+    /* padding: 8px; */
+}
+.specific-product h4{
+    padding: 10px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid lightgray;
+}
+.specific-product ul{
+    list-style: none;
+    padding: 10px;
+    font-size: 15px;
+}
+.product-rating-summery-header{
+    width: 100%;
+    padding-right: 25px;
+}
+.rating-value-product{
+    text-align: center;
+    align-items: center;  padding: 20px;
+    margin-left: 20%;
+    margin-top: 5%;
+    margin-bottom: 3%;
+    max-width: 50%;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  
+}
+.columns-product-rating{
+
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+.rating-value-product p{
+    color: #07b0b0;
+    font-size: 38px;
+}
+.columns-product-rating ul{
+list-style: none;
+
+}
+.columns-product-rating ul svg{
+    color: #faaf00;   
+    position: relative;
+    top: 4px; 
+    right: 2px;
+    }
+.columns-product-rating ul li .rate-product-progressBar{
+    width: 180px;
+    height: 6px;
+    color: #faaf00;   
+    position: sticky;
+    }
+.columns-product-rating .css-qhoknl-MuiLinearProgress-bar1 {
+    background-color: #faaf00!important;
+}
+/*/////////////////ProductPageReviewItem///////////////////*/
+.ProductPageReviewItem{
+    border-radius: 500px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    padding: 15px 0px;
+    padding-left: 35px;
+}
+.ProductPageReviewItem .css-n3lpn7-MuiGrid-root>.MuiGrid-ite{
+    margin-top: 0px !important;
+}
+.ProductPageReview{
+    padding: 0px 30px;
+    padding-bottom: 20px;
+
+}
+.ProductPageReview h4{
+margin-bottom: 30px;
+padding-left: 35px;
+}
+/*///////////////////////////////////*/
 .product-dsh .header-products{
     margin-bottom: 25px;
 }
@@ -189,4 +339,10 @@
     color: #fff;
 } 
 /*end-slide-card*/
-
+/*////////////////////////////////////////////// foreignObject ////////////////////*/
+foreignObject div{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rebeccapurple;
+}
