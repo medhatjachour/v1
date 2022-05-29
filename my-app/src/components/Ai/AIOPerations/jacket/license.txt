@@ -1,0 +1,11 @@
+Model Information:
+* title:	Jacket - AGC
+* source:	https://sketchfab.com/3d-models/jacket-agc-6e4321cb0d534debaa4f959dc83bae8e
+* author:	Gretchen (https://sketchfab.com/samarui)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Jacket - AGC" (https://sketchfab.com/3d-models/jacket-agc-6e4321cb0d534debaa4f959dc83bae8e) by Gretchen (https://sketchfab.com/samarui) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

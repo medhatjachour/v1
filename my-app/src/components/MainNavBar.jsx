@@ -99,7 +99,9 @@ const MainNavBar = () => {
                 component="div"
                 sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
               >
-                MUI
+              <NavLink to="/">
+                MAZBOOT
+              </NavLink>
               </Typography>
               <Search>
                 <SearchIconWrapper>

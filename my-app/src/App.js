@@ -20,14 +20,16 @@ function App() {
       <RouterBreadcrumbs/>
         <Counter />
       */}
+        {/* <div className="myApp"> */}
         <Routes>
           <Route index element={<Home />} />
-          <Route path="/Product/:id" element={<ProductPage />} />
-          <Route path="/Type/:id" element={<Type />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/BuyerAccount/*" element={<BuyerAccount />} />
+          <Route path="/Product/:id" element={<ProductPage />} className="myApp"/>
+          <Route path="/Type/:id" element={<Type />} className="myApp" />
+          <Route path="/login" element={<Login />} className="myApp"/>
+          <Route path="/signup" element={<Signup />} className="myApp"/>
+          <Route path="/BuyerAccount/*" element={<BuyerAccount />} className="myApp"/>
         </Routes>
+        {/* </div> */}
     </>
   );
 }

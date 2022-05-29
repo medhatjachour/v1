@@ -37,6 +37,12 @@
     font-weight: 400;
     line-height: 1.5;
 }
+.hero_model{
+    height: 500px;
+}
+.hero_model canvas{
+    height: 500px;
+}
 /*///////////////////////////////ViewA1///////////////////////////*/
 .sectionA{
     padding: 70px 40px;

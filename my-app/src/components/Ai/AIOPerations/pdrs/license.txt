@@ -1,0 +1,11 @@
+Model Information:
+* title:	Badly simulated Dress
+* source:	https://sketchfab.com/3d-models/badly-simulated-dress-9e73d3d771e44e6a85c62b8e2f5bae52
+* author:	manuel_A (https://sketchfab.com/manuel_A)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Badly simulated Dress" (https://sketchfab.com/3d-models/badly-simulated-dress-9e73d3d771e44e6a85c62b8e2f5bae52) by manuel_A (https://sketchfab.com/manuel_A) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

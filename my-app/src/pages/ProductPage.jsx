@@ -1,24 +1,32 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Box from "@mui/material/Box";
+// import Box from "@mui/material/Box";
 import { useParams } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
-import FacebookIcon from "@mui/icons-material/Facebook";
+import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import InstagramIcon from "@mui/icons-material/Instagram";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import Container from "@mui/material/Container";
+// import Container from "@mui/material/Container";
 import { Rating,IconButton } from "@mui/material";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import ShareIcon from "@mui/icons-material/Share";
+// import ShareIcon from "@mui/icons-material/Share";
+import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
 import ProductDetails from "../components/ProductDetails";
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  WhatsappShareButton,
+} from "react-share";
+// import MyPLY from "../components/Ai/MyPLY";
 //assetsimport 
 import "../components/css/product.css";
+
 
 const ProductPage = () => {
   const [Strokecolor, setStrokecolor] = useState("#07b0b03d");
@@ -26,6 +34,8 @@ const ProductPage = () => {
   const [TheProduct, setTheProduct] = useState([]);
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
+  // const [url, setUrl] = useState(`http://localhost:3000/product/${id}`);
+  const [url, setUrl] = useState(`http://muzzboot.medhatjachour.com/`);
 
   const handleMainImgCarouselLeft =() =>{
     console.log("handleMainImgCarouselLeft");
@@ -98,9 +108,9 @@ const ProductPage = () => {
     getTheProduct();
   }, []);
 
+  
   return (
     <>
-      {id}
       <div className="cnt" >
       <div className="productViewSection">
         <Grid
@@ -118,26 +128,35 @@ const ProductPage = () => {
             order={{ md: 2, xs: 2, sm: 2, lg: 1 }}
           >
             <Stack direction="row" spacing={2}>
-              <Button
+            <FacebookShareButton url={url}  className="pb-face-item">
+              {/* <Button
                 variant="outlined"
-                startIcon={<FacebookIcon className="pi-face-item" />}
+                startIcon={<FacebookOutlinedIcon className="pi-face-item" />}
                 className="pb-face-item"
-              ></Button>
+              ></Button> */}
+              <FacebookOutlinedIcon className="pi-face-item" />
+            </FacebookShareButton>
               <Button
                 variant="outlined"
                 startIcon={<InstagramIcon className="pi-insta-item" />}
                 className="pb-insta-item"
               ></Button>
-              <Button
+              <TwitterShareButton url={url} className="pb-twtr-item">
+              {/* <Button
                 variant="outlined"
                 startIcon={<TwitterIcon className="pi-twtr-item" />}
                 className="pb-twtr-item"
-              ></Button>
-              <Button
+              ></Button> */}
+              <TwitterIcon className="pi-twtr-item" />
+              </TwitterShareButton>
+              <WhatsappShareButton url={url} className="pb-whats-item">
+              {/* <Button
                 variant="outlined"
                 startIcon={<WhatsAppIcon className="pi-whats-item" />}
                 className="pb-whats-item"
-              ></Button>
+              ></Button> */}
+              <WhatsAppIcon className="pi-whats-item" />
+              </WhatsappShareButton>
             </Stack>
             <Button className="btnlnk-product view-similar" href="#">
               View similar items
@@ -239,7 +258,7 @@ const ProductPage = () => {
                 <span className="left-scroll-color color-controls"></span>
               </Grid>
               <Grid>
-                <p>sizes</p>
+                <p className="p-sizes">sizes</p>
                 <span className="left-scroll-size size-controls"></span>
                 <Grid
                   container
@@ -249,7 +268,17 @@ const ProductPage = () => {
                   className="sizes-product"
                 >
                   <div className="size-bg-holder" id="">
-                    <div id="" className="size-sm"></div>
+                    <div id="" className="size-sm">
+                        <AccountCircleOutlinedIcon className="size-user-icn"/>
+                    </div>
+                    
+                  </div>
+                  
+                  <div className="size-bg-holder" id="">
+                    <div id="" className="size-sm">
+                        <p className="size-user-text">sm</p>
+                    </div>
+                    
                   </div>
                 </Grid>
 
@@ -270,7 +299,9 @@ const ProductPage = () => {
             </div>
           </Grid>
         </Grid>
+
       </div>
+      {/* <MyPLY/> */}
       <div className="product-details-section">
         <ProductDetails/>
       </div>

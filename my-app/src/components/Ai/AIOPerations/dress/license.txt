@@ -1,0 +1,11 @@
+Model Information:
+* title:	Black Dress
+* source:	https://sketchfab.com/3d-models/black-dress-5079978e8e39489db88e0232d224117a
+* author:	SmartPlan (https://sketchfab.com/SmartPlan)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Black Dress" (https://sketchfab.com/3d-models/black-dress-5079978e8e39489db88e0232d224117a) by SmartPlan (https://sketchfab.com/SmartPlan) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)

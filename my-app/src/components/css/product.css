@@ -24,14 +24,17 @@
     color: #25d366;
 }
 .productViewSection .pb-face-item{
+    border: 1px solid!important;
     border-radius: 50%!important;
     border-color: #1877f2!important;
+    
     height: 50px;
     width: 50px;
     min-width: 0px!important;
     
 }
 .productViewSection .pb-insta-item{
+    border: 1px solid!important;
     border-radius: 50%!important;
     border-color: #c32aa3!important;
     height: 50px;
@@ -39,6 +42,7 @@
     min-width: 0px!important;
 }
 .productViewSection .pb-twtr-item{
+    border: 1px solid!important;
     border-radius: 50%!important;
     border-color: #1da1f2 !important;
     height: 50px;
@@ -46,6 +50,7 @@
     min-width: 0px!important;
 }
 .productViewSection .pb-whats-item{
+    border: 1px solid!important;
     border-radius: 50%!important;
     border-color: #25d366!important;
     height: 50px;
@@ -153,6 +158,7 @@ div.circle {
     font-size: 26px;
     transform: rotate(280deg);
 }
+
 /*////////////////////product details /////////////////////////*/
 .specific-product{
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
@@ -300,12 +306,29 @@ padding-left: 35px;
 }
 .productViewSection .sizes-product .size-sm{
     width: 100%;
+    color: white;
     height: 100%;
     margin: 0 1rem 0 0;
     border-radius: 60% 40% 30% 70% / 30% 40% 60% 70%   ;
     cursor: pointer;
     position: relative;
     background-color: var(--main-lt-color);
+}
+.size-sm .size-user-icn{
+    transform: rotate(45deg);
+    position: relative;
+    left: 10px;
+    top: 6px; ;
+}
+.p-sizes{
+    margin: 5px 0px;
+    margin-bottom: 10px;
+}.size-sm .size-user-text{
+    
+    transform: rotate(45deg);
+    position: relative;
+    left: 8px;
+    top: 14px; ;
 }
 .product-btns{
     margin: 8px 0px;

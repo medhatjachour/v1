@@ -8,6 +8,10 @@ import Container from "@mui/material/Container";
 
 //components
 import TypeIntro from '../Views/TypeIntro';
+import TypeSubHolder from "../Views/TypeSubHolder";
+import MainItemsView from "../Views/MainItemsView";
+// assets
+import '../components/css/type.css'
 
 const Type = () => {
     const { id } = useParams();
@@ -34,15 +38,23 @@ const Type = () => {
   }, []);
     return (
         <div>
-          <Container>
+          <>
             {id}
             {loading?<div>skelton</div>:
-            <TypeIntro
-                key= {id}
-                id = {id}
-            />
+            <>
+              <TypeIntro
+                  id = {id}
+              />
+              <TypeSubHolder
+                key={Math.random()}
+                id={id}
+              />
+              <MainItemsView
+                id={id}
+              />
+            </>
             }
-            </Container>
+            </>
         </div>
     );
 }

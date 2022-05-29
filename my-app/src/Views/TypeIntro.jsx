@@ -10,7 +10,10 @@ const TypeIntro = (props) => {
         <>
             <div className="typeIntro">
                 <div>
-                    <Skeleton variant="rectangular" width={"100%"} height={200} />
+                    {props.id}
+                    <Container>
+                        <Skeleton variant="rectangular" width={"100%"} height={200} />
+                    </Container>
                 </div>
             </div>   
         </>

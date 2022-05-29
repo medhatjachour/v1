@@ -8,10 +8,11 @@ import IntroHome from '../Views/IntroHome';
 //import ComponentsView from '../Views/ComponentsView'
 import Features from '../Views/Features';
 import ViewA1 from '../Views/ViewA1';
-import SliderAndMore from '../Views/SliderAndMore';
-import SliderSkelton from '../components/skeltons/SliderSkelton';
-import CatsView from '../Views/CatsView';
+// import SliderAndMore from '../Views/SliderAndMore';
+// import SliderSkelton from '../components/skeltons/SliderSkelton';
+// import CatsView from '../Views/CatsView';
 
+// import May26 from '../components/Ai/May26';
 const Home = () => {
     const [loading, setLoading] = useState(true);
     
@@ -35,7 +36,7 @@ const Home = () => {
           .get("http://127.0.0.1:8000/product_type_list/")
           .then((res) => {
             const fetchedTypes = res.data;
-            console.log(res.data);
+            //console.log(res.data);
             setTypes(fetchedTypes);
           })
           .catch((err) => {
@@ -48,11 +49,12 @@ const Home = () => {
   }, []);
 
     return (
-        <div>
+        <>
             <IntroHome/>
             <Features/>
+            {/* <May26/> */}
             <ViewA1/>
-
+{/* 
             {loading ? <SliderSkelton/>: types.map((type)=>{
                 return(
                     <>
@@ -79,13 +81,13 @@ const Home = () => {
                     </>
                 )
                 
-            })}
+            })} */}
            {/* <SliderAndMore
                 name = {"Category_name"}
                 meta = {"Category_meta_title"}
             />
             */} 
-        </div>
+        </>
     );
 }
 
