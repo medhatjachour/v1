@@ -1,177 +1,123 @@
-import * as React from "react";
-import { Formik, Form } from "formik";
-import * as Yup from "yup";
-//MUI
-import Avatar from "@mui/material/Avatar";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import AppleIcon from "@mui/icons-material/Apple";
-import GoogleIcon from "@mui/icons-material/Google";
-import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
-import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+import React ,{useState}from 'react';
+
+import { Formik, Form } from 'formik';
+import * as Yup from 'yup';
+
+import Textfield from '../components/FormsUI/Textfield';
+
+import Button from '../components/FormsUI/Button';
+import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
+
+
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+import IconButton from "@mui/material/IconButton";
 import Stack from "@mui/material/Stack";
-
-function Copyright(props) {
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {"Copyright © "}
-      <Link color="inherit" href="https://medhatjachour/">
-        Mazboot
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
-
-const theme = createTheme();
-
-export default function logIn() {
-  const validate = Yup.object({
-    
-    email: Yup.string().email("email is invaild").required("Email is Required"),
-    password: Yup.string()
-      .min(8, "must be at least 6")
-      .required("password Required"),
-  });
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+import { Skeleton, Typography } from "@mui/material";
+const INITIAL_FORM_STATE_REVIEW = {
+    KeepLoged: 0,
+    email: '',
+    password: '',
   };
+  
+  
+  const FORM_VALIDATION_REVIEW = Yup.object().shape({
+    KeepLoged: Yup.string()
+      .required('Required'),
+      email: Yup.string()
+      .required('Required'),
+      password: Yup.string()
+      .required('Required'),
+    
+  });
+  
+  
+ 
 
-  return (
-    <Formik
-      initialValues={{
-        firstName: "",
-        lastName: "",
-        email: "",
-        password: "",
-        confirmPassword: "",
-      }}
-      validationSchema={validate}
-      onSubmit={(values) => {
-        console.log(values);
-      }}
-    >
-      {(formik) => (
-        <div className="contLog-box">
-          <div className="log-box">
-            <h1 className="my4"> SignUp</h1>
-            {console.log("we are here")}
-            {console.log(formik)}
-            <Form>
-              <ThemeProvider theme={theme}>
-                <Container component="main" maxWidth="xs">
-                  <CssBaseline />
-                  <Box
-                    sx={{
-                      marginTop: 8,
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                    }}
+const Login = () => {
+    
+  
+    const [value, setValue] = useState(parseInt(0));
+    const [hover, setHover] = useState(-1);
+    return (
+        <div>
+        <Grid item sm={12} md={6}>
+          <div className="account-overview-card">
+          <h5 className="account-overview inside-account-grid-header ">
+              <Stack
+                direction="row"
+                alignItems="center"
+                spacing={2}
+              >
+              <IconButton
+                aria-label="delete"
+                id="edit-account-payment"
+                className="edit-account-details"
+              >
+                <ArrowLeftIcon />
+              </IconButton>
+              </Stack>
+            </h5>
+            <Formik
+              initialValues={{
+                ...INITIAL_FORM_STATE_REVIEW
+              }}
+              validationSchema={FORM_VALIDATION_REVIEW}
+              onSubmit={values => {
+                console.log(values);
+              }}
+            >
+              <Form key={1}>
+            <Box 
+            //component="form" 
+            //onSubmit={handleSaveUserAccount} 
+            sx={{ mt: 3 }}>
+              <Grid container spacing={2} columns={12} justifyContent="center">
+                <Grid item xs={12} sm={12}>
+                  
+                  <Typography>
+                    LogIn 
+                  </Typography>
+                  <Stack direction="row" spacing={2}>
+                  
+                    </Stack>
+                </Grid>
+                <Grid item xs={12} sm={12} 
+                     >
+                    <Textfield
+                      name="email"
+                      label="email"
+                    />
+                </Grid>
+             
+                <Grid item xs={12} sm={12} 
+                     >
+                     <Textfield
+                       name="password"
+                       label="password"
+                     />
+                </Grid>
+              
+              <Grid item sm={12} md={5}>
+                <div>
+                  <Button
+                      id="save-account-review" 
+                      className="save-account-detail"
                   >
-                    <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-                      <LockOutlinedIcon />
-                    </Avatar>
-                    <Typography component="h1" variant="h5">
-                      Sign in
-                    </Typography>
-                    <Box
-                      
-                      //component="form" // remove it if u wanna the link have an E $ P
-                      //noValidate
-                      sx={{ mt: 1 }}
-                    >
-                      <TextField
-                        margin="normal"
-                        required
-                        fullWidth
-                        id="email"
-                        label="Email Address"
-                        name="email"
-                        autoComplete="email"
-                        autoFocus
-                      />
-                      <TextField
-                        margin="normal"
-                        required
-                        fullWidth
-                        name="password"
-                        label="Password"
-                        type="password"
-                        id="password"
-                        autoComplete="current-password"
-                      />
-                      <FormControlLabel
-                        control={<Checkbox value="remember" color="primary" />}
-                        label="Remember me"
-                      />
-                      <Button
-                        type="submit"
-                        fullWidth
-                        variant="contained"
-                        sx={{ mt: 3, mb: 2 }}
-                      >
-                        Sign In
-                      </Button>
-                      <h4>OR LOG IN WITH</h4>
-                      <Stack
-                        direction={{ xs: "column", sm: "row" }}
-                        spacing={{ xs: 1, sm: 2, md: 3 }}
-                      >
-                        <Button variant="outlined" color="inherit">
-                          <FacebookIcon />
-                          Facebook
-                        </Button>
-                        <Button variant="outlined" color="inherit">
-                          <AppleIcon /> Apple
-                        </Button>
-                        <Button variant="outlined" color="inherit">
-                          <GoogleIcon />
-                          Google
-                        </Button>
-                      </Stack>
-                    </Box>
-                    <Grid container>
-                      <Grid item xs>
-                        <Link href="#" variant="body2">
-                          Forgot password?
-                        </Link>
-                      </Grid>
-                      <Grid item>
-                        <Link href="#" variant="body2">
-                          {"Don't have an account? Sign Up"}
-                        </Link>
-                      </Grid>
-                    </Grid>
-                  </Box>
-                  <Copyright sx={{ mt: 8, mb: 4 }} />
-                </Container>
-              </ThemeProvider>
+                    Save
+                  </Button>
+              </div>
+              </Grid>
+              
+              </Grid> 
+            </Box>
+            
             </Form>
+            </Formik>
           </div>
+        </Grid>
         </div>
-      )}
-    </Formik>
-  );
+    );
 }
+
+export default Login;

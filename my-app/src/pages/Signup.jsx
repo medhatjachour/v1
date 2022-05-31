@@ -73,10 +73,10 @@ export default function SignUp() {
       password: data.get('password'),
     }
     console.log(setdataSend)
-  /********************************************************************* */
-    axios
-    .post("http://127.0.0.1:8000/", setdataSend)
-    .then((res) => refresh());
+  // /********************************************************************* */
+  //   axios
+  //   .post("http://127.0.0.1:8000/", setdataSend)
+  //   .then((res) => refresh());
   
   };
 
